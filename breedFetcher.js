@@ -5,7 +5,7 @@ if (breed === undefined) {
   console.log("provide a breed");
   process.exit();
 }
-
+const fetchBreedDescription = function(breedName, callback) {
 request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, response, body) => {
   
   if (error) {
@@ -20,4 +20,6 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, respons
     console.log(`Breed not found.`);
   }
 });
+}
 
+module.exports = { fetchBreedDescription };
