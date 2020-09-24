@@ -8,10 +8,10 @@ if (breed === undefined) {
 
 request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, response, body) => {
   
-    if (error) {
-      console.log(error);
-      process.exit();
-    }
+  if (error) {
+    console.log(error);
+    process.exit();
+  }
  
   const data = JSON.parse(body);
   if (data[0]) {
@@ -19,5 +19,5 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, respons
   } else {
     console.log(`Breed not found.`);
   }
-}); 
+});
 
