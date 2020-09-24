@@ -1,7 +1,10 @@
 const request = require('request');
 const breed = process.argv[2];
 
-
+if (breed === undefined) {
+  console.log("provide a breed");
+  process.exit();
+}
 
 request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, response, body) => {
   if (error) {
